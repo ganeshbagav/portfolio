@@ -37,11 +37,11 @@ const Index = () => {
   };
 
   return (
-    <div className="h-screen overflow-y-auto lg:overflow-hidden py-0 md:py-8 px-0 md:px-8 lg:px-16 flex flex-col no-scrollbar">
+    <div className="h-screen overflow-y-auto overflow-x-hidden lg:overflow-hidden py-0 md:py-8 px-0 md:px-8 lg:px-16 flex flex-col no-scrollbar">
       <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-8 flex-1 min-h-0">
           {/* Profile Sidebar */}
-          <aside className="lg:col-span-4 xl:col-span-3 lg:h-full lg:overflow-y-auto lg:overflow-visible no-scrollbar pb-8 lg:pb-0">
+          <aside className="lg:col-span-4 xl:col-span-3 lg:h-full lg:overflow-visible no-scrollbar pb-8 lg:pb-0">
             <ProfileCard />
           </aside>
 
@@ -61,7 +61,7 @@ const Index = () => {
             {/* Content Area */}
             <div
               ref={scrollContainerRef}
-              className="flex-1 overflow-y-auto px-4 pb-24 md:px-8 md:pb-8 pt-0 no-scrollbar scroll-mask"
+              className="flex-1 overflow-y-auto px-4 pb-24 md:px-8 lg:pb-20 md:pb-8 pt-0 no-scrollbar scroll-mask"
             >
               <AnimatePresence mode="wait">
                 <motion.div

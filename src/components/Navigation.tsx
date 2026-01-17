@@ -21,7 +21,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
 
   const isMobile = windowWidth < 768;
   const sectionCount = sections.length;
-  const itemWidth = isMobile ? 180 : 220;
+  const itemWidth = isMobile ? 130 : 220;
 
   const [virtualIndex, setVirtualIndex] = useState(sectionCount * 1000 + sections.indexOf(activeSection));
 
@@ -106,7 +106,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
 
   return (
     <nav
-      className="w-full relative flex justify-center py-1 md:py-4 select-none overflow-visible touch-none"
+      className="w-full relative flex justify-center py-1 md:py-4 select-none overflow-hidden touch-none"
       style={{ perspective: "2000px" }}
       {...(bind() as any)}
     >
@@ -118,7 +118,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
         </div>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-between w-full max-w-[480px] md:max-w-[800px] px-2 md:px-4 pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex items-center justify-between w-full max-w-[100%] md:max-w-[800px] px-1 md:px-4 pointer-events-none">
         <button onClick={prev} className="pointer-events-auto text-primary/30 hover:text-primary transition-all p-2 md:p-4 hover:scale-125 active:scale-95">
           <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
         </button>

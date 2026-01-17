@@ -21,13 +21,11 @@
 
   .scroll-mask {
     mask-image: linear-gradient(to bottom,
-        transparent,
-        black 2%,
+        black 0%,
         black 98%,
         transparent);
     -webkit-mask-image: linear-gradient(to bottom,
-        transparent,
-        black 2%,
+        black 0%,
         black 98%,
         transparent);
   }
