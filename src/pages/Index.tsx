@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProfileCard from "@/components/ProfileCard";
 import Navigation from "@/components/Navigation";
@@ -10,6 +10,14 @@ import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("About");
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Reset scroll position when section changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [activeSection]);
 
   const renderSection = () => {
     switch (activeSection) {
@@ -42,35 +50,25 @@ const Index = () => {
             className="lg:col-span-8 xl:col-span-9 glass-card flex flex-col min-h-0 relative h-full overflow-hidden"
           >
             {/* Locked Header */}
-            <div className="shrink-0 z-40 bg-card/95 backdrop-blur-xl border-b border-white/5 rounded-t-2xl p-4 md:p-8 space-y-4 md:space-y-6">
+            <div className="shrink-0 z-40 bg-card/95 backdrop-blur-xl rounded-t-2xl py-3 px-4 md:py-4 md:px-8 flex justify-center items-center">
               {/* Navigation */}
               <Navigation
                 activeSection={activeSection}
                 onSectionChange={setActiveSection}
               />
-
-              {/* Dynamic Title */}
-              <motion.div
-                key={activeSection + "-title"}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col items-center"
-              >
-                <h2 className="section-title !mb-0 text-2xl md:text-3xl">
-                  {activeSection === "Journey" ? "My Journey" : activeSection}
-                </h2>
-              </motion.div>
             </div>
 
             {/* Internal Scrollable Content Area */}
-            <div className="flex-1 overflow-y-auto p-4 md:p-8 pt-6 no-scrollbar">
+            <div
+              ref={scrollContainerRef}
+              className="flex-1 overflow-y-auto p-4 md:p-8 pt-0 no-scrollbar scroll-mask"
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSection}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
+                  exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
                   {renderSection()}

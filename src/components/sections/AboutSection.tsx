@@ -49,7 +49,7 @@ const AboutSection = () => {
         </p>
       </div>
 
-      <h3 className="text-xl font-semibold text-foreground mt-10 mb-6">What I'm Doing</h3>
+      <h3 className="text-xl font-semibold text-foreground mt-2 mb-6">What I'm Doing</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {services.map((service, index) => (

@@ -138,7 +138,7 @@ const PortfolioSection = () => {
             </div>
 
             {/* Project Info */}
-            <div className="p-4">
+            <div className="p-5">
               <h4 className="font-semibold text-foreground">{project.title}</h4>
               <p className="text-xs text-muted-foreground mt-1">{project.category}</p>
               <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{project.description}</p>

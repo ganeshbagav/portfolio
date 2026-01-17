@@ -56,16 +56,16 @@ const ContactSection = () => {
       transition={{ duration: 0.5 }}
     >
 
-      <div className="mt-8">
+      <div className="mt-2">
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-4"
+          className="space-y-3"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <input
               type="text"
               name="name"
@@ -105,7 +105,7 @@ const ContactSection = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            rows={6}
+            rows={4}
             disabled={isSubmitting}
             className="input-field resize-none disabled:opacity-50"
           />
