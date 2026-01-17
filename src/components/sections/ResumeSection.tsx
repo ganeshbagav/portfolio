@@ -34,7 +34,6 @@ const ResumeSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="section-title">Journey</h2>
 
       {/* Experience */}
       <div className="mt-8">

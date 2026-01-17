@@ -93,7 +93,6 @@ const PortfolioSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="section-title">Portfolio</h2>
 
       {/* Category Filter */}
       <div className="flex gap-4 mt-8 mb-8">
@@ -101,11 +100,10 @@ const PortfolioSection = () => {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`text-sm font-medium transition-colors duration-300 ${
-              activeCategory === category
-                ? "text-primary"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
+            className={`text-sm font-medium transition-colors duration-300 ${activeCategory === category
+              ? "text-primary"
+              : "text-muted-foreground hover:text-foreground"
+              }`}
           >
             {category}
           </button>
@@ -127,7 +125,7 @@ const PortfolioSection = () => {
               className={`h-40 bg-gradient-to-br ${project.color} flex items-center justify-center relative`}
             >
               <span className="text-4xl font-bold text-white/30">{project.title.charAt(0)}</span>
-              
+
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                 <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-transform">

@@ -55,7 +55,6 @@ const ContactSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="section-title">Contact</h2>
 
       <div className="mt-8">
         {/* Contact Form */}

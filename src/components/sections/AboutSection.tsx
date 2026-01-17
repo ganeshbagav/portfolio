@@ -31,21 +31,20 @@ const AboutSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="section-title">About Me</h2>
 
       <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed">
         <p>
-          Highly motivated Backend Developer with professional experience in designing, developing, 
+          Highly motivated Backend Developer with professional experience in designing, developing,
           and deploying scalable, modular server-side applications using Node.js and Express.js.
         </p>
         <p>
-          Proven ability to integrate complex third-party APIs (e.g., logistics, identity verification) 
-          to automate business processes. Proficient in MongoDB schema design, RESTful API development, 
+          Proven ability to integrate complex third-party APIs (e.g., logistics, identity verification)
+          to automate business processes. Proficient in MongoDB schema design, RESTful API development,
           and ensuring high code quality in collaborative team environments.
         </p>
         <p>
-          Recently promoted from an intern role, demonstrating strong system ownership and feature 
-          delivery capabilities. I'm passionate about building efficient backend solutions that power 
+          Recently promoted from an intern role, demonstrating strong system ownership and feature
+          delivery capabilities. I'm passionate about building efficient backend solutions that power
           great user experiences.
         </p>
       </div>
