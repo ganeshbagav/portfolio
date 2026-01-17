@@ -45,7 +45,7 @@ const ProfileCard = () => {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
-      className="glass-card p-8 sticky top-8"
+      className="glass-card p-5 md:p-8 lg:sticky lg:top-8"
     >
       {/* Avatar */}
       <div className="flex flex-col items-center mb-6">

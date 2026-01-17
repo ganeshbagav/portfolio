@@ -37,20 +37,20 @@ const Index = () => {
   };
 
   return (
-    <div className="h-screen overflow-hidden py-4 md:py-8 px-4 md:px-8 lg:px-16 flex flex-col">
+    <div className="h-screen overflow-y-auto lg:overflow-hidden py-0 md:py-8 px-0 md:px-8 lg:px-16 flex flex-col no-scrollbar">
       <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 flex-1 min-h-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-8 flex-1 min-h-0">
           {/* Profile Sidebar */}
-          <aside className="lg:col-span-4 xl:col-span-3 h-full overflow-y-auto lg:overflow-visible no-scrollbar">
+          <aside className="lg:col-span-4 xl:col-span-3 lg:h-full lg:overflow-y-auto lg:overflow-visible no-scrollbar pb-8 lg:pb-0">
             <ProfileCard />
           </aside>
 
           {/* Main Content */}
           <main
-            className="lg:col-span-8 xl:col-span-9 glass-card flex flex-col min-h-0 relative h-full overflow-hidden"
+            className="lg:col-span-8 xl:col-span-9 glass-card flex flex-col min-h-0 relative h-[100dvh] lg:h-full lg:overflow-hidden rounded-none md:rounded-2xl"
           >
-            {/* Locked Header */}
-            <div className="shrink-0 z-40 bg-card/95 backdrop-blur-xl rounded-t-2xl py-3 px-4 md:py-4 md:px-8 flex justify-center items-center">
+            {/* Locked Header - Sticky on mobile, Fixed on desktop */}
+            <div className="sticky lg:relative top-0 shrink-0 z-50 bg-card/95 backdrop-blur-xl py-1 px-2 md:py-4 md:px-8 flex justify-center items-center border-b border-border/10 lg:border-none">
               {/* Navigation */}
               <Navigation
                 activeSection={activeSection}
@@ -58,10 +58,10 @@ const Index = () => {
               />
             </div>
 
-            {/* Internal Scrollable Content Area */}
+            {/* Content Area */}
             <div
               ref={scrollContainerRef}
-              className="flex-1 overflow-y-auto p-4 md:p-8 pt-0 no-scrollbar scroll-mask"
+              className="flex-1 overflow-y-auto px-4 pb-24 md:px-8 md:pb-8 pt-0 no-scrollbar scroll-mask"
             >
               <AnimatePresence mode="wait">
                 <motion.div

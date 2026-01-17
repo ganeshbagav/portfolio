@@ -36,15 +36,15 @@ const ResumeSection = () => {
     >
 
       {/* Experience */}
-      <div className="mt-8">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="icon-box">
-            <Briefcase className="w-5 h-5" />
+      <div className="mt-4 md:mt-8">
+        <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+          <div className="icon-box w-10 h-10 md:w-12 md:h-12">
+            <Briefcase className="w-4 h-4 md:w-5 md:h-5" />
           </div>
-          <h3 className="text-xl font-semibold text-foreground">Experience</h3>
+          <h3 className="text-lg md:text-xl font-semibold text-foreground">Experience</h3>
         </div>
 
-        <div className="space-y-6 ml-6 border-l-2 border-border pl-6">
+        <div className="space-y-4 md:space-y-6 ml-4 md:ml-6 border-l-2 border-border pl-4 md:pl-6">
           {experience.map((item, index) => (
             <motion.div
               key={item.position}
@@ -53,14 +53,14 @@ const ResumeSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="absolute -left-[31px] top-1.5 timeline-dot" />
-              <h4 className="font-semibold text-foreground">{item.position}</h4>
-              <p className="text-sm text-muted-foreground mt-1">{item.company}</p>
-              <p className="text-sm text-primary mt-1">{item.period} • {item.location}</p>
-              <ul className="mt-3 space-y-2">
+              <div className="absolute -left-[21px] md:-left-[31px] top-1.5 timeline-dot w-2 h-2 md:w-3 md:h-3" />
+              <h4 className="text-sm md:text-base font-semibold text-foreground">{item.position}</h4>
+              <p className="text-[12px] md:text-sm text-muted-foreground mt-0.5 md:mt-1">{item.company}</p>
+              <p className="text-[12px] md:text-sm text-primary mt-0.5 md:mt-1">{item.period} • {item.location}</p>
+              <ul className="mt-2 md:mt-3 space-y-1.5 md:space-y-2">
                 {item.highlights.map((highlight, i) => (
-                  <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                  <li key={i} className="text-[12px] md:text-sm text-muted-foreground flex items-start gap-2">
+                    <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-primary mt-1.5 md:mt-2 shrink-0" />
                     {highlight}
                   </li>
                 ))}
@@ -71,15 +71,15 @@ const ResumeSection = () => {
       </div>
 
       {/* Education */}
-      <div className="mt-12">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="icon-box">
-            <GraduationCap className="w-5 h-5" />
+      <div className="mt-8 md:mt-12">
+        <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+          <div className="icon-box w-10 h-10 md:w-12 md:h-12">
+            <GraduationCap className="w-4 h-4 md:w-5 md:h-5" />
           </div>
-          <h3 className="text-xl font-semibold text-foreground">Education</h3>
+          <h3 className="text-lg md:text-xl font-semibold text-foreground">Education</h3>
         </div>
 
-        <div className="space-y-6 ml-6 border-l-2 border-border pl-6">
+        <div className="space-y-4 md:space-y-6 ml-4 md:ml-6 border-l-2 border-border pl-4 md:pl-6">
           {education.map((item, index) => (
             <motion.div
               key={item.institution}
@@ -88,11 +88,11 @@ const ResumeSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="absolute -left-[31px] top-1.5 timeline-dot" />
-              <h4 className="font-semibold text-foreground">{item.institution}</h4>
-              <p className="text-sm text-muted-foreground mt-1">{item.degree}</p>
-              <p className="text-sm text-primary mt-1">{item.period}</p>
-              <p className="text-sm text-muted-foreground mt-1">{item.details}</p>
+              <div className="absolute -left-[21px] md:-left-[31px] top-1.5 timeline-dot w-2 h-2 md:w-3 md:h-3" />
+              <h4 className="text-sm md:text-base font-semibold text-foreground">{item.institution}</h4>
+              <p className="text-[12px] md:text-sm text-muted-foreground mt-0.5 md:mt-1">{item.degree}</p>
+              <p className="text-[12px] md:text-sm text-primary mt-0.5 md:mt-1">{item.period}</p>
+              <p className="text-[12px] md:text-sm text-muted-foreground mt-0.5 md:mt-1">{item.details}</p>
             </motion.div>
           ))}
         </div>

@@ -56,16 +56,16 @@ const ContactSection = () => {
       transition={{ duration: 0.5 }}
     >
 
-      <div className="mt-2">
+      <div className="mt-4 md:mt-8">
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-3"
+          className="space-y-3 md:space-y-4"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             <input
               type="text"
               name="name"
@@ -74,7 +74,7 @@ const ContactSection = () => {
               onChange={handleChange}
               required
               disabled={isSubmitting}
-              className="input-field disabled:opacity-50"
+              className="input-field disabled:opacity-50 text-[13px] md:text-sm"
             />
             <input
               type="email"
@@ -84,7 +84,7 @@ const ContactSection = () => {
               onChange={handleChange}
               required
               disabled={isSubmitting}
-              className="input-field disabled:opacity-50"
+              className="input-field disabled:opacity-50 text-[13px] md:text-sm"
             />
           </div>
 
@@ -96,7 +96,7 @@ const ContactSection = () => {
             onChange={handleChange}
             required
             disabled={isSubmitting}
-            className="input-field disabled:opacity-50"
+            className="input-field disabled:opacity-50 text-[13px] md:text-sm"
           />
 
           <textarea
@@ -107,7 +107,7 @@ const ContactSection = () => {
             required
             rows={4}
             disabled={isSubmitting}
-            className="input-field resize-none disabled:opacity-50"
+            className="input-field resize-none disabled:opacity-50 text-[13px] md:text-sm"
           />
 
           <motion.button
@@ -115,30 +115,30 @@ const ContactSection = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             disabled={isSubmitting}
-            className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
           >
             <Send className="w-4 h-4" />
-            {isSubmitting ? "Sending..." : "Send Message"}
+            <span className="text-[13px] md:text-sm font-semibold">{isSubmitting ? "Sending..." : "Send Message"}</span>
           </motion.button>
         </motion.form>
 
         {/* Additional Contact Info */}
-        <div className="mt-12 glass-card p-6">
-          <h3 className="text-lg font-semibold text-foreground mb-4">Let's Connect</h3>
-          <p className="text-muted-foreground">
+        <div className="mt-8 md:mt-12 glass-card p-4 md:p-6">
+          <h3 className="text-base md:text-lg font-semibold text-foreground mb-2 md:mb-4">Let's Connect</h3>
+          <p className="text-[12px] md:text-sm text-muted-foreground leading-relaxed">
             Feel free to reach out if you're looking for a backend developer, have a question, or just want to connect.
             I'm always excited to discuss new opportunities and collaborate on interesting projects.
           </p>
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 space-y-1.5 md:space-y-2">
             <a
               href="mailto:ganeshbagav7@gmail.com"
-              className="block text-primary hover:underline"
+              className="block text-[13px] md:text-sm text-primary hover:underline font-medium"
             >
               ganeshbagav7@gmail.com
             </a>
             <a
               href="tel:+918767986802"
-              className="block text-muted-foreground hover:text-foreground transition-colors"
+              className="block text-[13px] md:text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               +91-8767986802
             </a>

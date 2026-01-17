@@ -95,12 +95,12 @@ const PortfolioSection = () => {
     >
 
       {/* Category Filter */}
-      <div className="flex gap-4 mt-8 mb-8">
+      <div className="flex flex-wrap gap-3 md:gap-4 mt-4 md:mt-8 mb-4 md:mb-8">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`text-sm font-medium transition-colors duration-300 ${activeCategory === category
+            className={`text-[12px] md:text-sm font-medium transition-colors duration-300 ${activeCategory === category
               ? "text-primary"
               : "text-muted-foreground hover:text-foreground"
               }`}
@@ -111,7 +111,7 @@ const PortfolioSection = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.title}
@@ -122,37 +122,37 @@ const PortfolioSection = () => {
           >
             {/* Project Image/Gradient */}
             <div
-              className={`h-40 bg-gradient-to-br ${project.color} flex items-center justify-center relative`}
+              className={`h-32 md:h-40 bg-gradient-to-br ${project.color} flex items-center justify-center relative`}
             >
-              <span className="text-4xl font-bold text-white/30">{project.title.charAt(0)}</span>
+              <span className="text-3xl md:text-4xl font-bold text-white/30">{project.title.charAt(0)}</span>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-transform">
-                  <ExternalLink className="w-5 h-5" />
+              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 md:gap-4">
+                <button className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-transform">
+                  <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:scale-110 transition-transform">
-                  <Github className="w-5 h-5" />
+                <button className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:scale-110 transition-transform">
+                  <Github className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
               </div>
             </div>
 
             {/* Project Info */}
-            <div className="p-5">
-              <h4 className="font-semibold text-foreground">{project.title}</h4>
-              <p className="text-xs text-muted-foreground mt-1">{project.category}</p>
-              <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-3">
+            <div className="p-4 md:p-5">
+              <h4 className="text-sm md:text-base font-semibold text-foreground">{project.title}</h4>
+              <p className="text-[10px] md:text-xs text-primary/80 font-medium mt-0.5 md:mt-1 uppercase tracking-wider">{project.category}</p>
+              <p className="text-[12px] md:text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{project.description}</p>
+              <div className="flex flex-wrap gap-1.5 md:gap-2 mt-3 md:mt-4">
                 {project.tech.slice(0, 3).map((t) => (
                   <span
                     key={t}
-                    className="text-xs px-2 py-1 bg-secondary rounded text-secondary-foreground"
+                    className="text-[10px] md:text-xs px-2 py-0.5 md:py-1 bg-secondary/50 border border-border/50 rounded text-secondary-foreground"
                   >
                     {t}
                   </span>
                 ))}
                 {project.tech.length > 3 && (
-                  <span className="text-xs px-2 py-1 bg-secondary rounded text-muted-foreground">
+                  <span className="text-[10px] md:text-xs px-2 py-0.5 md:py-1 bg-secondary/50 border border-border/50 rounded text-muted-foreground">
                     +{project.tech.length - 3}
                   </span>
                 )}

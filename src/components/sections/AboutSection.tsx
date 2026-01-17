@@ -32,7 +32,7 @@ const AboutSection = () => {
       transition={{ duration: 0.5 }}
     >
 
-      <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed">
+      <div className="mt-0 md:mt-8 space-y-3 md:space-y-4 text-muted-foreground leading-relaxed text-[13px] md:text-base">
         <p>
           Highly motivated Backend Developer with professional experience in designing, developing,
           and deploying scalable, modular server-side applications using Node.js and Express.js.
@@ -49,21 +49,21 @@ const AboutSection = () => {
         </p>
       </div>
 
-      <h3 className="text-xl font-semibold text-foreground mt-2 mb-6">What I'm Doing</h3>
+      <h3 className="text-lg md:text-xl font-semibold text-foreground mt-6 md:mt-10 mb-4 md:mb-6">What I'm Doing</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
         {services.map((service, index) => (
           <motion.div
             key={service.title}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="service-card flex gap-4"
+            className="service-card flex gap-3 md:gap-4 p-4 md:p-6"
           >
-            <div className="icon-box shrink-0">{service.icon}</div>
+            <div className="icon-box shrink-0 w-10 h-10 md:w-12 md:h-12">{service.icon}</div>
             <div>
-              <h4 className="font-semibold text-foreground mb-1">{service.title}</h4>
-              <p className="text-sm text-muted-foreground">{service.description}</p>
+              <h4 className="font-semibold text-foreground text-sm md:text-base mb-1">{service.title}</h4>
+              <p className="text-[12px] md:text-sm text-muted-foreground leading-snug">{service.description}</p>
             </div>
           </motion.div>
         ))}
